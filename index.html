@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio ส่วนตัว</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <h1 class="logo">Portfolio</h1>
+                <ul class="nav-links">
+                    <li><a href="#home">หน้าแรก</a></li>
+                    <li><a href="#about">เกี่ยวกับฉัน</a></li>
+                    <li><a href="#gallery">ผลงาน</a></li>
+                    <li><a href="#contact">ติดต่อ</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="container">
+            <h1>สวัสดีครับ ผม <span class="highlight">ณภัทร โพธิบาล</span></h1>
+            <p>นักพัฒนาเว็บไซต์ฝึกหัด | HTML/PHP/CSS | Sql/Database</p>
+        </div>
+    </header>
+
+    <section id="about" class="about container">
+        <h2>เกี่ยวกับฉัน</h2>
+        <p>ผมเลือกเรียนสายไอทีเพราะอยากเข้าใจเทคโนโลยีที่เราใช้ทุกวัน และรู้สึกสนุกทุกครั้งที่ได้เขียนโค้ดเพื่อแก้ปัญหาหรือสร้างสิ่งใหม่ๆ</p>
+    </section>
+
+<section id="bio" class="bio container">
+    <h2>รายละเอียดเกี่ยวกับฉัน</h2>
+    <div class="bio-content">
+        <div class="bio-image">
+            <img src="images/Profile.jpg" alt="">
+        </div>
+        <div class="bio-text">
+                <p><strong>ชื่อ:</strong> นายณภัทร โพธิบาล</p>
+                <p><strong>อาชีพ:</strong> นักศึกษา</p>
+                <p><strong>สถานศึกษา:</strong> วิทยาลัยเทคนิคนิคมอุตสาหกรรม</p>
+                <p><strong>ที่อยู่:</strong> บ้านฉาง, ระยอง</p>
+                <p><strong>อีเมล:</strong> napatpotibal00@email.com</p>
+                <p><strong>เบอร์โทร:</strong> 098-765-4321</p>
+                <p>ผมศึกษาอยู่ในสายไอทีมีประสบการณ์เขียน Python, HTML, PHP, Css เบื้องต้น</p>
+        </div>
+    </div>
+</section>
+
+    <section id="gallery" class="gallery container">
+    <h2>แกลเลอรี่ผลงาน</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="images/1.jpg" alt="">
+            <p>ชนะเลิศเหรียญทองแข่งสร้างเกมระดับเขตระยอง ปี 62</p>
+        </div>
+        <div class="gallery-item">
+            <img src="images/2.jpg" alt="">
+            <p>ชนะเลิศเหรียญทองแข่งสร้างเกมระดับเขตระยอง ปี 62</p>
+        </div>
+
+    </div>
+    </section>
+
+    <section id="contact" class="contact container">
+        <h2>ติดต่อฉัน</h2>
+        <p>อีเมล: napatpotibal00@gmail.com</p>
+        <p>โทร: 090-317-3489</p>
+        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ณภัทร / Portfolio</p>
+        </div>
+    </footer>
+
+<script>
+    const sections = document.querySelectorAll("section, header");
+    const navLinks = document.querySelectorAll(".nav-links li a");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
